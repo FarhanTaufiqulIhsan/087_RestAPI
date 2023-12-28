@@ -15,9 +15,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.pakeapi.navigation.DestinasiNavigasi
 import com.example.pakeapi.ui.home.viewmodel.InsertUiEvent
 import com.example.pakeapi.ui.home.viewmodel.InsertUiState
+import com.example.pakeapi.ui.home.viewmodel.InsertViewModel
+import com.example.pakeapi.ui.home.viewmodel.PenyediaViewModel
 
 object DestinasiEntry : DestinasiNavigasi {
     override val route = "item_entry"
@@ -26,7 +29,11 @@ object DestinasiEntry : DestinasiNavigasi {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun EntryKontakScreen(){}
+fun EntryKontakScreen(
+    navigateBack: () -> Unit,
+    modifier: Modifier = Modifier,
+    viewModel: InsertViewModel = viewModel(factory = PenyediaViewModel.Factory)
+){}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
