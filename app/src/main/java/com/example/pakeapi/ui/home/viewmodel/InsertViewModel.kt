@@ -1,10 +1,23 @@
 package com.example.pakeapi.ui.home.viewmodel
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.pakeapi.model.Kontak
 import com.example.pakeapi.repository.KontakRepository
+import kotlinx.coroutines.launch
 
 class InsertViewModel(private val kontakRepository: KontakRepository) : ViewModel(){
+
+    var insertkontakState by mutableStateOf(InsertUiState())
+        private set
+
+    fun updateInsertKontakState(insertUiEvent: InsertUiEvent){
+        insertkontakState = InsertUiState(insertUiEvent = insertUiEvent)
+    }
+
 
 }
 
