@@ -12,3 +12,7 @@ object DestinasiEntry : DestinasiNavigasi {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun EntryKontakScreen(){}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun FormInputSiswa(){}
