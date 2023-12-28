@@ -102,7 +102,7 @@ fun KontakLayout(
     onDeleteClick: (Kontak) -> Unit = {}
 ){
     LazyColumn(
-        modifier = Modifier,
+        modifier = modifier,
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ){
