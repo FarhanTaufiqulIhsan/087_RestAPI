@@ -90,6 +90,10 @@ fun EntryKontakBody(
         verticalArrangement = Arrangement.spacedBy(18.dp),
         modifier = modifier.padding(12.dp)
     ){
-
+        FormInputSiswa(
+            insertUiEvent = insertUiState.insertUiEvent,
+            onValueChange = onSiswaValueChange,
+            modifier = Modifier.fillMaxWidth()
+            )
     }
 }
