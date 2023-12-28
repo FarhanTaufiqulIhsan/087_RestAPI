@@ -16,6 +16,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -108,7 +109,7 @@ fun KontakLayout(
         items(kontak){kontak ->
             KontakCard(kontak = kontak, modifier = Modifier
                 .fillMaxWidth()
-                .clickable { onDetailClick(kontak)},
+                .clickable { onDetailClick(kontak) },
                 onDeleteClick = {
                     onDeleteClick(kontak)
                 }
@@ -121,8 +122,9 @@ fun KontakLayout(
 @Composable
 fun KontakCard(
     kontak: Kontak,
+    modifier: Modifier = Modifier,
     onDeleteClick: (Kontak) -> Unit = {},
-    modifier: Modifier = Modifier
+
 ){
     Card(
         modifier = modifier,
@@ -141,22 +143,28 @@ fun KontakCard(
                     style = MaterialTheme.typography.titleLarge
                 )
                 Spacer(Modifier.weight(1f))
-                IconButton(onClick = { onDeleteClick(kontak) }) {
-                    Icon(
-                        imageVector = Icons.Default.Delete,
-                        contentDescription = null
-                    )
-                }
+                Icon(
+                    imageVector = Icons.Default.Phone,
+                    contentDescription = null
+                )
 
                 Text(
                     text = kontak.nohp,
                     style = MaterialTheme.typography.titleMedium
                 )
             }
-            Text(
-                text = kontak.alamat,
-                style = MaterialTheme.typography.titleMedium)
-
+            Row ( modifier = Modifier.fillMaxWidth(),
+                  verticalAlignment = Alignment.CenterVertically
+                ){
+                Text(
+                    text = kontak.alamat,
+                    style = MaterialTheme.typography.titleMedium
+                )
+                Spacer(Modifier.weight(1f))
+                IconButton(onClick = { onDeleteClick(kontak) }) {
+                    Icon(imageVector = Icons.Default.Delete, contentDescription = null)
+                }
+            }
         }
     }
 }
@@ -182,8 +190,8 @@ fun HomeScreen(
             TopAppBarKontak(
                 title = DestinasiHome.titleRes,
                 canNavigateBack = false,
-                scrollBehavior = scrollBehavior,
-            )
+                scrollBehavior = scrollBehavior
+            ){}
         },
         floatingActionButton = {
             FloatingActionButton(
