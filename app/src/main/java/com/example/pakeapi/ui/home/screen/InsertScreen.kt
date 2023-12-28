@@ -71,5 +71,9 @@ fun FormInputSiswa(
                 modifier = Modifier.padding(12.dp)
             )
         }
+        Divider(
+            thickness = 8.dp,
+            modifier = Modifier.padding(12.dp)
+        )
     }
 }
