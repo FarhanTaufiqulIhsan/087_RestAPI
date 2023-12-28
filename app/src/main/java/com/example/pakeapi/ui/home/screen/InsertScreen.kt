@@ -15,6 +15,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.example.pakeapi.navigation.DestinasiNavigasi
 import com.example.pakeapi.ui.home.viewmodel.InsertUiEvent
+import com.example.pakeapi.ui.home.viewmodel.InsertUiState
 
 object DestinasiEntry : DestinasiNavigasi {
     override val route = "item_entry"
@@ -77,3 +78,11 @@ fun FormInputSiswa(
         )
     }
 }
+
+@Composable
+fun EntryKontakBody(
+    insertUiState: InsertUiState,
+    onSiswaValueChange: (InsertUiEvent) -> Unit,
+    noSaveClick: () -> Unit,
+    modifier: Modifier = Modifier
+){}
