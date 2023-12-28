@@ -130,11 +130,11 @@ fun KontakCard(
         elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
     ) {
         Column(
-            modifier = Modifier.padding(16.dp),
+            modifier = Modifier.padding(12.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             Row (
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth()
             ){
                 Text(
                     text = kontak.nama,
@@ -182,8 +182,8 @@ fun HomeScreen(
             TopAppBarKontak(
                 title = DestinasiHome.titleRes,
                 canNavigateBack = false,
-                scrollBehavior = scrollBehavior
-            ) {}
+                scrollBehavior = scrollBehavior,
+            )
         },
         floatingActionButton = {
             FloatingActionButton(

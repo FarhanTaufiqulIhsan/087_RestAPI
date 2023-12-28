@@ -18,7 +18,7 @@ interface KontakService {
     suspend fun getKontak(): List<Kontak>
 
     @GET("kontak/{id}")
-    suspend fun getKontak(@Path("id") id : Int): Kontak
+    suspend fun getKontakById(@Path("id") id : Int): Kontak
 
     @POST("kontak")
     suspend fun insertKontak(@Body kontak: Kontak)
